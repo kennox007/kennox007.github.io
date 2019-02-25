@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Coiny" rel="stylesheet"> 
+<style>
+body {
+  font-family: 'Coiny', cursive;
+  margin: 0 auto;
+  max-width: 600px;
+  background: url("https://electrek.co/wp-content/uploads/sites/3/2018/03/ancheer-handlebars.jpg?quality=82&strip=all")
+  
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: red;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: black;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(29,0,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(100,440,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.price {
+  float: right;
+}
+  ul {
+      padding: 10px;
+      background: rgba(50,0,0,0.5);
+      text-align: center;
+    }
+  li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+<header>
+<ul>
+      <li><button onclick=BMX()>BMX</button></li>
+      <li><button onclick=MountainBike()>Mountain Bike</button></li>
+      <li><button onclick=RoadBikes()> Road Bikes</button></li>
+    </ul>
+</header>
+<h1>kennox's Bike Corp.</h1>
+<h2>Ride your fears away!</h2>
+
+<div id="cycle"> </div>
+
+<script>
+BMXImages = [
+  'url("https://www.kinkbmx.com/wp-content/uploads/2018/03/bikes_19_carve_16_gloss_trans_black_k405tbk19_3q-800x800.jpg")',
+  'url("https://cdn.shopify.com/s/files/1/1330/2007/products/Fit_Bike_Co_Eighteen_2019_Black_large.jpg?v=1545528028")',
+  'url("https://www.kinkbmx.com/wp-content/uploads/2017/04/bike_launch_k420cro18_3q-800x800.jpg ,")',
+  ]
+
+MountainBikeImages = [
+  'url("https://image.redbull.com/rbcom/052/2017-05-15/e5e541f7-260e-4ea6-aeed-0f1c46f410dd/0010/1/1050/553/1/nukeproof-scout-hardtail.jpg")',
+  'url("https://static1.squarespace.com/static/569ed0040ab377818080c55b/t/5ab7e6ea03ce64c499d0969d/1522001651196/L1030423.JPG")',
+  'url("http://ashlandelectricbikes.com/wp-content/uploads/Magnum-Peak-electric-bike-1.jpg")',
+  ]
+
+RoadBikesImages = [
+  'url("https://cdn.gearpatrol.com/wp-content/uploads/2017/07/Staff-Picks-Road-Bikes-Gear-Patrol-Scott-1-1940x1300.jpg")',
+  'url("https://cdnmos-bikeradar.global.ssl.fastly.net/images/news/2016/11/15/whyte-wessex-01-1505906320879-rh41p87ozlvv-1507723597398-bz1f98h8jsql-630-354.jpg")',
+  'url("https://roadbikeaction.com/wp-content/uploads/2015/07/IMG_8890.jpg")',
+  ]
+  
+  BMXDivs = [
+    '<div class="item"><p>BMX <span class="price">$100-$600</span><br /><small>BMX, which stands for Bicycle Moto Cross, is a form of cycling that is considered to be an extreme sport. BMX bikes have a variety of uses and are tailored to the specific needs of the form of the sport that they are used for. BMX made its debut as an Olympic sport in the 2008 Games held in China. </small></p></div>',
+    '<div class="item"><p>BMX <span class="price">$100-$600</span><br /><small>BMXs makes stunt riding the best experience.</small></p></div>',
+    '<div class="item"><p>BMX <span class="price">$100-$600</span><br /><small>A BMX bike is an off-road sport bicycle used for racing and stunt riding.BMX means bicycle motocross.</small></p></div>', 
+  ]
+  
+MountainBikeDivs = [
+  '<div class="item"><p>Mountain Bike <span class="price">$100-$4000</span><br /><small>Trek is the world leader in mountain bike technology. No surprise that our mountain bikes are the most technologically advanced on the market. Here, innovations are not limited to only the highest-end MTB models. Every Trek mountain bike is loaded with features and details that will make any ride, on any trail, better.</small></p></div>',
+  '<div class="item"><p>Mountain Bike <span class="price">$100-$4000</span><br /><small>Mountain bikes share similarities with other bicycles, but incorporate features designed to enhance durability and performance in rough terrain..</small></p></div>',
+  '<div class="item"><p>Mountain Bike <span class="price">$100-$4000</span><br /><small>Mountain bikes are built to handle these types of terrain and features..</small></p></div>',
+  ]
+  
+  RoadBikesDivs = [
+    '<div class="item"><p>Road Bikes<span class="price">$200-$13000</span><br /><small>Every Trek road bike is designed to deliver best-in-class performance, from our fastest hand-built carbon race machines to our refined aluminum models. These are the lightweight, road-smoothing, aerodynamic road bikes that will carry you over the steepest climbs and keep you smiling on the descents. You will feel the difference, from the first ride all the way to the podium.</small></p></div>',
+    '<div class="item"><p>Road Bikes<span class="price">$200-$13000</span><br /><small>The term road bicycle can also describe any type of bike used primarily on paved roads.</small></p></div>',
+    '<div class="item"><p>Road Bikes<span class="price">$200-$13000</span><br /><small>Utility bicycles are designed for utility cycling: are a traditional bicycle for commuting, shopping and running errands in towns and cities.</small></p></div>',
+    ]
+
+function BMX() {
+  project = document.getElementById("cycle")
+  project.innerHTML = ''
+	project.innerHTML += BMXDivs[0]
+  project.innerHTML += BMXDivs[1]
+  project.innerHTML += BMXDivs[2]
+  //alert("clicked BMX")
+   items = document.getElementsByClassName("item")
+    items[0].style.background = BMXImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = BMXImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = BMXImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+
+} 
+function MountainBike() {
+  project = document.getElementById("cycle")
+  project.innerHTML = ''
+	project.innerHTML += MountainBikeDivs[0]
+  project.innerHTML += MountainBikeDivs[1]
+  project.innerHTML += MountainBikeDivs[2]
+	//alert("clicked Mountain Bikes")
+	items = document.getElementsByClassName("item")
+    items[0].style.background = MountainBikeImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = MountainBikeImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = MountainBikeImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+} 
+function RoadBikes() {
+  project = document.getElementById("cycle")
+  project.innerHTML = ''
+	project.innerHTML += RoadBikesDivs[0]
+  project.innerHTML += RoadBikesDivs[1]
+  project.innerHTML += RoadBikesDivs[2]
+	//alert("clicked Road Bikes")
+	items = document.getElementsByClassName("item")
+    items[0].style.background = RoadBikesImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = RoadBikesImages[1]
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.background = RoadBikesImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+} 
+
+
+
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
