@@ -131,19 +131,19 @@ RoadBikesImages = [
   ]
   
   BMXDivs = [
-    '<div class="item"><p>BMX <span class="price">$100-$600</span><br /><small>BMX, which stands for Bicycle Moto Cross, is a form of cycling that is considered to be an extreme sport. BMX bikes have a variety of uses and are tailored to the specific needs of the form of the sport that they are used for. BMX made its debut as an Olympic sport in the 2008 Games held in China. </small></p></div>',
+    '<div onclick=this.classList.toggle("show-description") class="item"><p>BMX <span class="price">$100-$600</span><br /><small>BMX, which stands for Bicycle Moto Cross, is a form of cycling that is considered to be an extreme sport. BMX bikes have a variety of uses and are tailored to the specific needs of the form of the sport that they are used for. BMX made its debut as an Olympic sport in the 2008 Games held in China. </small></p></div>',
     '<div class="item"><p>BMX <span class="price">$100-$600</span><br /><small>BMXs makes stunt riding the best experience.</small></p></div>',
     '<div class="item"><p>BMX <span class="price">$100-$600</span><br /><small>A BMX bike is an off-road sport bicycle used for racing and stunt riding.BMX means bicycle motocross.</small></p></div>', 
   ]
   
 MountainBikeDivs = [
-  '<div class="item"><p>Mountain Bike <span class="price">$100-$4000</span><br /><small>Trek is the world leader in mountain bike technology. No surprise that our mountain bikes are the most technologically advanced on the market. Here, innovations are not limited to only the highest-end MTB models. Every Trek mountain bike is loaded with features and details that will make any ride, on any trail, better.</small></p></div>',
+  '<div onclick=this.classList.toggle("show-description") class="item"><p>Mountain Bike <span class="price">$100-$4000</span><br /><small>Trek is the world leader in mountain bike technology. No surprise that our mountain bikes are the most technologically advanced on the market. Here, innovations are not limited to only the highest-end MTB models. Every Trek mountain bike is loaded with features and details that will make any ride, on any trail, better.</small></p></div>',
   '<div class="item"><p>Mountain Bike <span class="price">$100-$4000</span><br /><small>Mountain bikes share similarities with other bicycles, but incorporate features designed to enhance durability and performance in rough terrain..</small></p></div>',
   '<div class="item"><p>Mountain Bike <span class="price">$100-$4000</span><br /><small>Mountain bikes are built to handle these types of terrain and features..</small></p></div>',
   ]
   
   RoadBikesDivs = [
-    '<div class="item"><p>Road Bikes<span class="price">$200-$13000</span><br /><small>Every Trek road bike is designed to deliver best-in-class performance, from our fastest hand-built carbon race machines to our refined aluminum models. These are the lightweight, road-smoothing, aerodynamic road bikes that will carry you over the steepest climbs and keep you smiling on the descents. You will feel the difference, from the first ride all the way to the podium.</small></p></div>',
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Road Bikes<span class="price">$200-$13000</span><br /><small>Every Trek road bike is designed to deliver best-in-class performance, from our fastest hand-built carbon race machines to our refined aluminum models. These are the lightweight, road-smoothing, aerodynamic road bikes that will carry you over the steepest climbs and keep you smiling on the descents. You will feel the difference, from the first ride all the way to the podium.</small></p></div>',
     '<div class="item"><p>Road Bikes<span class="price">$200-$13000</span><br /><small>The term road bicycle can also describe any type of bike used primarily on paved roads.</small></p></div>',
     '<div class="item"><p>Road Bikes<span class="price">$200-$13000</span><br /><small>Utility bicycles are designed for utility cycling: are a traditional bicycle for commuting, shopping and running errands in towns and cities.</small></p></div>',
     ]
@@ -198,9 +198,7 @@ function RoadBikes() {
 
 
 
-  $('div').on('click', function() {
-      $(this).toggleClass('show-description');
-  });
+
 </script>
 
 </body>
