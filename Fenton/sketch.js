@@ -77,6 +77,11 @@ function draw() {
     b = b + 20
   }
  }
+else { 
+	a = touches[0].x
+	b = touches[0].y
+}
+
   
   for (i=0; i<enemyCount; i=i+1) {
     square(o[i]*s, p[i], 75*s)
