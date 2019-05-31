@@ -62,6 +62,8 @@ function draw() {
 
   circle(a*s, b, 100*s)
 
+ if (touches.length == 0)   {	  
+	  
  if (keyIsDown(LEFT_ARROW)) {
     a = a - 20
   }
@@ -74,6 +76,7 @@ function draw() {
  if (keyIsDown(DOWN_ARROW)) {
     b = b + 20
   }
+ }
   
   for (i=0; i<enemyCount; i=i+1) {
     square(o[i]*s, p[i], 75*s)
