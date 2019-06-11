@@ -26,6 +26,7 @@ let level
 let time
 let game = document.getElementById("game")
 let scoreboard = {  }
+let knife
 
 
 function setup() {
@@ -43,6 +44,8 @@ function setup() {
   enemyCount=2;
   level=1;
   time=10
+  knife = createImg("giffff.gif") 
+	
 
 
 }
